@@ -26,6 +26,8 @@
 
 ### 🛠️ Build from source
 
+Make sure you have install [rust^1.69](https://www.rust-lang.org/) and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+
 ```bash
 make
 ```
