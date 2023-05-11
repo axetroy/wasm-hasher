@@ -6,12 +6,13 @@ edition = "2021"
 repository = "https://github.com/axetroy/wasm-hasher"
 readme = "README.md"
 description = "A wasm module for Hash"
+license = "Anti-996"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [features]
-default = []
+default = ["wee_alloc"]
 
 [profile.release]
 # This makes the compiled code faster and smaller, but it makes compiling slower,
@@ -39,7 +40,7 @@ wee_alloc = { version = "0.4.2", optional = true }
 # like the DOM.
 [dependencies.web-sys]
 version = "0.3.61"
-features = ["console","FileReader","ProgressEvent","Blob"]
+features = ["console", "Blob"]
 
 # These crates are used for running unit tests.
 [dev-dependencies]
