@@ -2,7 +2,7 @@
 name = "hasher"
 version = "0.1.0"
 authors = ["Axetroy <axetroy.dev@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -18,15 +18,15 @@ lto = true
 [dependencies]
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
 # to interact with JavaScript.
-wasm-bindgen = "0.2.63"
-md-5 = "0.10.1"
-sha1 = "0.10.1"
-sha2 = "0.10.2"
-sha3 = "0.10.1"
+wasm-bindgen = "0.2.85"
+md-5 = "0.10.5"
+sha1 = "0.10.5"
+sha2 = "0.10.5"
+sha3 = "0.10.5"
 sm3 = "0.4.1"
-js-sys = "0.3"
-digest = "0.10.3"
-wasm-bindgen-futures = "0.4.29"
+js-sys = "0.3.62"
+digest = "0.10.6"
+wasm-bindgen-futures = "0.4.35"
 # `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
 # compared to the default allocator's ~10K. However, it is slower than the default
 # allocator, so it's not enabled by default.
@@ -35,7 +35,7 @@ wee_alloc = { version = "0.4.2", optional = true }
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
 [dependencies.web-sys]
-version = "0.3.56"
+version = "0.3.61"
 features = ["console","FileReader","ProgressEvent","Blob"]
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
@@ -49,4 +49,4 @@ console_error_panic_hook = "0.1.5"
 [dev-dependencies]
 wasm-bindgen-test = "0.2.45"
 futures = "0.1.27"
-js-sys = "0.3.22"
+js-sys = "0.3.62"
