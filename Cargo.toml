@@ -40,7 +40,7 @@ wee_alloc = { version = "0.4.2", optional = true }
 # like the DOM.
 [dependencies.web-sys]
 version = "0.3.61"
-features = ["console", "FileReader", "Blob"]
+features = ["console", "FileReader", "Blob", "AbortSignal"]
 
 # These crates are used for running unit tests.
 [dev-dependencies]

@@ -7,7 +7,7 @@ use sha3::{Sha3_224, Sha3_256, Sha3_384, Sha3_512};
 use sm3::Sm3;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::JsFuture;
-use web_sys::Blob;
+use web_sys::{AbortSignal, Blob};
 
 // When the `wee_alloc` feature is enabled, this uses `wee_alloc` as the global
 // allocator.
@@ -18,88 +18,120 @@ use web_sys::Blob;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-pub async fn md5(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn md5(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Md5::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha2_224(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha2_224(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha224::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha2_256(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha2_256(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha256::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha2_384(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha2_384(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha384::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha2_512(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha2_512(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha512::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha1(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha1(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha1::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha3_224(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha3_224(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha3_224::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha3_256(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha3_256(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha3_256::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha3_384(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha3_384(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha3_384::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sha3_512(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sha3_512(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sha3_512::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
 #[wasm_bindgen]
-pub async fn sm3(blob: Blob, cb: Function) -> Result<String, JsValue> {
+pub async fn sm3(signal: AbortSignal, blob: Blob, cb: Function) -> Result<String, JsValue> {
     let mut hasher = Sm3::new();
-    computed(blob, cb, &mut hasher).await;
-    Ok(format!("{:x}", hasher.finalize()))
+    match computed(signal, blob, cb, &mut hasher).await {
+        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
+        Err(err) => Err(err),
+    }
 }
 
-pub async fn computed<D: Digest>(blob: Blob, cb: Function, hasher: &mut D) {
+pub async fn computed<D: Digest>(
+    signal: AbortSignal,
+    blob: Blob,
+    cb: Function,
+    hasher: &mut D,
+) -> Result<(), JsValue> {
     let step: f64 = 10485760.0;
     let size = blob.size();
     let chunks = (size / step).ceil() as i64;
     let mut start: f64 = 0.0;
+
     for _ in 0..chunks {
+        if signal.aborted() {
+            return Err(JsValue::from("Signal has been abort!"));
+        }
+
         let mut end = start + step;
         end = if end >= size { size } else { end };
         let data = blob
@@ -112,4 +144,8 @@ pub async fn computed<D: Digest>(blob: Blob, cb: Function, hasher: &mut D) {
         let _ = cb.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
         start += step;
     }
+
+    let _ = cb.call1(&JsValue::null(), &JsValue::from(100.0));
+
+    Ok(())
 }
