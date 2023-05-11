@@ -3,6 +3,9 @@ name = "hasher"
 version = "0.1.0"
 authors = ["Axetroy <axetroy.dev@gmail.com>"]
 edition = "2021"
+repository = "https://github.com/axetroy/wasm-hasher"
+readme = "README.md"
+description = "A wasm module for Hash"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
