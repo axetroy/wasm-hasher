@@ -21,11 +21,11 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 pub async fn md5(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Md5::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -35,11 +35,11 @@ pub async fn md5(
 pub async fn sha2_224(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha224::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -49,11 +49,11 @@ pub async fn sha2_224(
 pub async fn sha2_256(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha256::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -63,11 +63,11 @@ pub async fn sha2_256(
 pub async fn sha2_384(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha384::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -77,11 +77,11 @@ pub async fn sha2_384(
 pub async fn sha2_512(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha512::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -91,11 +91,11 @@ pub async fn sha2_512(
 pub async fn sha1(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha1::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -105,11 +105,11 @@ pub async fn sha1(
 pub async fn sha3_224(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_224::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -119,11 +119,11 @@ pub async fn sha3_224(
 pub async fn sha3_256(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_256::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -133,11 +133,11 @@ pub async fn sha3_256(
 pub async fn sha3_384(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_384::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -147,11 +147,11 @@ pub async fn sha3_384(
 pub async fn sha3_512(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_512::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -161,11 +161,11 @@ pub async fn sha3_512(
 pub async fn sm3(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk: Option<f64>,
+    on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sm3::new();
-    match computed(signal, blob, chunk, cb, &mut hasher).await {
+    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
         Ok(_) => Ok(format!("{:x}", hasher.finalize())),
         Err(err) => Err(err),
     }
@@ -174,11 +174,17 @@ pub async fn sm3(
 pub async fn computed<D: Digest>(
     signal: AbortSignal,
     blob: Blob,
-    chunk: f64,
-    cb: Function,
+    chunk_size: Option<f64>,
+    cb: &Option<Function>,
     hasher: &mut D,
 ) -> Result<(), JsValue> {
     let size = blob.size();
+
+    let chunk = match chunk_size {
+        Some(size) => size,
+        None => (1024 * 1024 * 5) as f64,
+    };
+
     let chunks = (size / chunk).ceil() as i64;
     let mut start: f64 = 0.0;
 
@@ -196,11 +202,21 @@ pub async fn computed<D: Digest>(
             .await
             .expect("get arrayBuffer failed!");
         hasher.update(&Uint8Array::new(&buffer).to_vec());
-        let _ = cb.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
+        match cb {
+            Some(func) => {
+                let _ = func.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
+            }
+            None => (),
+        }
         start += chunk;
     }
 
-    let _ = cb.call1(&JsValue::null(), &JsValue::from(100.0));
+    match cb {
+        Some(func) => {
+            let _ = func.call1(&JsValue::null(), &JsValue::from(100.0));
+        }
+        None => (),
+    }
 
     Ok(())
 }
