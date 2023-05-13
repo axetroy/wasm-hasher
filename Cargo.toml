@@ -1,12 +1,23 @@
 [package]
-name = "hasher"
+name = "wasm-hasher"
 version = "0.1.0"
 authors = ["Axetroy <axetroy.dev@gmail.com>"]
 edition = "2021"
 repository = "https://github.com/axetroy/wasm-hasher"
 readme = "README.md"
-description = "A wasm module for Hash"
+description = "computed data hash by webAssembly support md5,sha1,sha2,sha3,sm3"
 license = "Anti-996"
+keywords = [
+  "md5",
+  "sha",
+  "sha1",
+  "sha2",
+  "sha3",
+  "sha256",
+  "sha512",
+  "wasm",
+  "webassembly",
+]
 
 [lib]
 crate-type = ["cdylib", "rlib"]

@@ -12,25 +12,29 @@
 
 </div>
 
+The difference with [github.com/fuyoo/wasm-hasher](https://github.com/fuyoo/wasm-hasher)
+
+1. Hash process can be interrupted with `abortController`
+2. The exposed function can specify the chunks size for each read. Larger chunks use more CPU.
+3. `onProgress` callback is optional. Set to `null` to improve performance if you don't need it.
+
 ## Usage
 
-```bash
-
+```js
+import("@axetroy/wasm-hasher").then(({ default: hasher }) => {
+  const controller = new abortController();
+  const file = new Blob([], { type: "application/text" });
+  hasher.md5(controller.signal, file, 1024 * 1024 * 10, (progress) => {
+    console.log("hash progress");
+  });
+});
 ```
 
 ## 🚴 Installation
 
-1. if you are using Bundler(Which build-in support to importing wasm module, eg. Webpack^5/Vite)
-
 ```bash
 npm install @axetroy/wasm-hasher
 ```
-
-```js
-import("@axetroy/wasm-hasher");
-```
-
-2. If you are using in Native browser
 
 ### 🛠️ Build from source
 
