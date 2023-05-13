@@ -44,14 +44,14 @@ npm install @axetroy/wasm-hasher-sm3
 
 ### Packages
 
-| Package                   | Description                  | Version                                                                                                                     |
-| ------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| @axetroy/wasm-hasher      | Including all supported hash | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher)      |
-| @axetroy/wasm-hasher-md5  | Including md5 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5)  |
-| @axetroy/wasm-hasher-sha1 | Including sha1 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1) |
-| @axetroy/wasm-hasher-sha2 | Including sha2 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2) |
-| @axetroy/wasm-hasher-sha3 | Including sha3 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3) |
-| @axetroy/wasm-hasher-sm3  | Including sm3 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3)  |
+| Package                   | Description                  | Version                                                                                                                          |
+| ------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| @axetroy/wasm-hasher      | Including all supported hash | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher)           |
+| @axetroy/wasm-hasher-md5  | Including md5 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5)   |
+| @axetroy/wasm-hasher-sha1 | Including sha1 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1) |
+| @axetroy/wasm-hasher-sha2 | Including sha2 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2) |
+| @axetroy/wasm-hasher-sha3 | Including sha3 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3) |
+| @axetroy/wasm-hasher-sm3  | Including sm3 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha4.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3)  |
 
 ### 🛠️ Build from source
 
