@@ -2,7 +2,7 @@
 
   <h1><code>computed data hash by webAssembly</code></h1>
 
-<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`</strong>
+<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`/`tiger`</strong>
 
   <p>
     <a href="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml"><img src="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml/badge.svg" alt="Build Status" /></a>
@@ -54,6 +54,7 @@ npm install @axetroy/wasm-hasher-ripemd
 | @axetroy/wasm-hasher-sha3   | Including sha3 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3)     |
 | @axetroy/wasm-hasher-sm3    | Including sm3 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3)       |
 | @axetroy/wasm-hasher-ripemd | Including ripemd hash        | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd) |
+| @axetroy/wasm-hasher-tiger  | Including tiger hash         | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger)   |
 
 ### 🛠️ Build from source
 
