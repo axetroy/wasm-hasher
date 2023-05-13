@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1><code>WASM module for hash</code></h1>
+  <h1><code>computed data hash by webAssembly</code></h1>
 
 <strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`</strong>
 
