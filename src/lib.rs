@@ -11,3 +11,4 @@ pub use wasm_hasher_sha1::*;
 pub use wasm_hasher_sha2::*;
 pub use wasm_hasher_sha3::*;
 pub use wasm_hasher_sm3::*;
+pub use wasm_hasher_ripemd::*;

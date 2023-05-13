@@ -6,3 +6,4 @@ build:
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/sha2
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/sha3
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/sm3
+	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/ripemd

@@ -5,7 +5,7 @@ authors = ["Axetroy <axetroy.dev@gmail.com>"]
 edition = "2021"
 repository = "https://github.com/axetroy/wasm-hasher"
 readme = "README.md"
-description = "computed data hash by webAssembly support md5,sha1,sha2,sha3,sm3"
+description = "computed data hash by webAssembly support md5,sha1,sha2,sha3,sm3,ripemd"
 license = "Anti-996"
 keywords = [
   "md5",
@@ -15,6 +15,7 @@ keywords = [
   "sha3",
   "sha256",
   "sha512",
+  "ripemd",
   "wasm",
   "webassembly",
 ]
@@ -37,6 +38,7 @@ wasm-hasher-sha1 = { path = "./crate/sha1", default-features = false }
 wasm-hasher-sha2 = { path = "./crate/sha2", default-features = false }
 wasm-hasher-sha3 = { path = "./crate/sha3", default-features = false }
 wasm-hasher-sm3 = { path = "./crate/sm3", default-features = false }
+wasm-hasher-ripemd = { path = "./crate/ripemd", default-features = false }
 
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
@@ -53,4 +55,5 @@ members = [
   "crate/sha2",
   "crate/sha3",
   "crate/sm3",
+  "crate/ripemd",
 ]

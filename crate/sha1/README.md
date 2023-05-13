@@ -1,5 +1,5 @@
 ### Usage
 
 ```js
-import pkg from "@axetroy/wasm-hasher-sha1";
+import hasher from "@axetroy/wasm-hasher-sha1";
 ```
