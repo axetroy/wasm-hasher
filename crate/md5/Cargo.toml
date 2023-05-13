@@ -1,0 +1,42 @@
+[package]
+name = "wasm-hasher-md5"
+version = "0.1.0"
+authors = ["Axetroy <axetroy.dev@gmail.com>"]
+edition = "2021"
+repository = "https://github.com/axetroy/wasm-hasher"
+readme = "README.md"
+description = "computed data hash by webAssembly"
+license = "Anti-996"
+keywords = ["md5", "wasm", "webassembly"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["wee_alloc"]
+
+[dependencies]
+# The `wasm-bindgen` crate provides the bare minimum functionality needed
+# to interact with JavaScript.
+wasm-bindgen = "0.2.85"
+md-5 = "0.10.5"
+js-sys = "0.3.62"
+digest = "0.10.6"
+wasm-bindgen-futures = "0.4.35"
+# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
+# compared to the default allocator's ~10K. However, it is slower than the default
+# allocator, so it's not enabled by default.
+wee_alloc = { version = "0.4.2", optional = true }
+wasm-hasher-lib = { path = "../lib" }
+
+# The `web-sys` crate allows you to interact with the various browser APIs,
+# like the DOM.
+[dependencies.web-sys]
+version = "0.3.61"
+features = ["console", "FileReader", "Blob", "AbortSignal"]
+
+# These crates are used for running unit tests.
+[dev-dependencies]
+wasm-bindgen-test = "0.2.45"
+futures = "0.1.27"
+js-sys = "0.3.62"

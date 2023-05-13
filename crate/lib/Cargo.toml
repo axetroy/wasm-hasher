@@ -1,0 +1,36 @@
+[package]
+name = "wasm-hasher-lib"
+version = "0.1.0"
+authors = ["Axetroy <axetroy.dev@gmail.com>"]
+edition = "2021"
+repository = "https://github.com/axetroy/wasm-hasher"
+readme = "README.md"
+description = "computed data hash by webAssembly"
+license = "Anti-996"
+keywords = ["wasm", "webassembly"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+
+[dependencies]
+# The `wasm-bindgen` crate provides the bare minimum functionality needed
+# to interact with JavaScript.
+wasm-bindgen = "0.2.85"
+js-sys = "0.3.62"
+digest = "0.10.6"
+wasm-bindgen-futures = "0.4.35"
+
+# The `web-sys` crate allows you to interact with the various browser APIs,
+# like the DOM.
+[dependencies.web-sys]
+version = "0.3.61"
+features = ["console", "FileReader", "Blob", "AbortSignal"]
+
+# These crates are used for running unit tests.
+[dev-dependencies]
+wasm-bindgen-test = "0.2.45"
+futures = "0.1.27"
+js-sys = "0.3.62"
