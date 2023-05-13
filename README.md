@@ -2,7 +2,7 @@
 
   <h1><code>computed data hash by webAssembly</code></h1>
 
-<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`/`tiger`</strong>
+<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`/`tiger`/`whirlpool`</strong>
 
   <p>
     <a href="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml"><img src="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml/badge.svg" alt="Build Status" /></a>
@@ -41,20 +41,23 @@ npm install @axetroy/wasm-hasher-sha2
 npm install @axetroy/wasm-hasher-sha3
 npm install @axetroy/wasm-hasher-sm3
 npm install @axetroy/wasm-hasher-ripemd
+npm install @axetroy/wasm-hasher-tiger
+npm install @axetroy/wasm-hasher-whirlpool
 ```
 
 ### Packages
 
-| Package                     | Description                  | Version                                                                                                                              |
-| --------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| @axetroy/wasm-hasher        | Including all supported hash | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher)               |
-| @axetroy/wasm-hasher-md5    | Including md5 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5)       |
-| @axetroy/wasm-hasher-sha1   | Including sha1 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1)     |
-| @axetroy/wasm-hasher-sha2   | Including sha2 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2)     |
-| @axetroy/wasm-hasher-sha3   | Including sha3 hash          | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3)     |
-| @axetroy/wasm-hasher-sm3    | Including sm3 hash           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3)       |
-| @axetroy/wasm-hasher-ripemd | Including ripemd hash        | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd) |
-| @axetroy/wasm-hasher-tiger  | Including tiger hash         | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger)   |
+| Package                        | Version                                                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| @axetroy/wasm-hasher           | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher)                     |
+| @axetroy/wasm-hasher-md5       | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-md5)             |
+| @axetroy/wasm-hasher-sha1      | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha1)           |
+| @axetroy/wasm-hasher-sha2      | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha2)           |
+| @axetroy/wasm-hasher-sha3      | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sha3)           |
+| @axetroy/wasm-hasher-sm3       | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-sm3)             |
+| @axetroy/wasm-hasher-ripemd    | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd)       |
+| @axetroy/wasm-hasher-tiger     | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger)         |
+| @axetroy/wasm-hasher-whirlpool | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-whirlpool.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-whirlpool) |
 
 ### 🛠️ Build from source
 
