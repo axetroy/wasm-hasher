@@ -1,5 +1,5 @@
 use js_sys::Function;
-use ripemd::{Ripemd128, Ripemd160, Ripemd256, Ripemd320, Digest};
+use ripemd::{Digest, Ripemd128, Ripemd160, Ripemd256, Ripemd320};
 use wasm_bindgen::prelude::*;
 use web_sys::{AbortSignal, Blob};
 
@@ -11,7 +11,6 @@ use web_sys::{AbortSignal, Blob};
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-
 #[wasm_bindgen]
 pub async fn ripemd_128(
     signal: AbortSignal,
@@ -20,10 +19,8 @@ pub async fn ripemd_128(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Ripemd128::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -34,10 +31,8 @@ pub async fn ripemd_160(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Ripemd160::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -48,10 +43,8 @@ pub async fn ripemd_256(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Ripemd256::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -62,8 +55,6 @@ pub async fn ripemd_320(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Ripemd320::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }

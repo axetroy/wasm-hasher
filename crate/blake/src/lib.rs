@@ -20,10 +20,8 @@ pub async fn blake_224(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Blake224::new();
-    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -34,10 +32,8 @@ pub async fn blake_256(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Blake256::new();
-    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -48,10 +44,8 @@ pub async fn blake_384(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Blake384::new();
-    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -62,10 +56,8 @@ pub async fn blake_512(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Blake512::new();
-    match computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 pub async fn computed<D: Digest>(

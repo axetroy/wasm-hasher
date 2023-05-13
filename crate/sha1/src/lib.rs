@@ -20,8 +20,6 @@ pub async fn sha1(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha1::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }

@@ -19,10 +19,8 @@ pub async fn tiger(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Tiger::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -33,8 +31,6 @@ pub async fn tiger2(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Tiger2::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }

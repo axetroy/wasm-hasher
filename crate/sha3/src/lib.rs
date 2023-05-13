@@ -20,10 +20,8 @@ pub async fn sha3_224(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_224::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -34,10 +32,8 @@ pub async fn sha3_256(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_256::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -48,10 +44,8 @@ pub async fn sha3_384(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_384::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
 
 #[wasm_bindgen]
@@ -62,8 +56,6 @@ pub async fn sha3_512(
     on_progress: Option<Function>,
 ) -> Result<String, JsValue> {
     let mut hasher = Sha3_512::new();
-    match wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await {
-        Ok(_) => Ok(format!("{:x}", hasher.finalize())),
-        Err(err) => Err(err),
-    }
+    wasm_hasher_lib::computed(signal, blob, chunk, &on_progress, &mut hasher).await?;
+    Ok(format!("{:x}", hasher.finalize()))
 }
