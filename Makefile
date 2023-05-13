@@ -9,3 +9,4 @@ build:
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/ripemd
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/tiger
 	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/whirlpool
+	@wasm-pack build --release --target bundler --scope axetroy --out-dir out ./crate/blake

@@ -14,3 +14,4 @@ pub use wasm_hasher_sm3::*;
 pub use wasm_hasher_ripemd::*;
 pub use wasm_hasher_tiger::*;
 pub use wasm_hasher_whirlpool::*;
+pub use wasm_hasher_blake::*;

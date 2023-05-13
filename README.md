@@ -2,7 +2,7 @@
 
   <h1><code>computed data hash by webAssembly</code></h1>
 
-<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`/`tiger`/`whirlpool`</strong>
+<strong>Support `md5`/`sha1`/`sha224`/`sha256`/`sha512`/`sm3`/`ripemd`/`tiger`/`whirlpool`/`blake`</strong>
 
   <p>
     <a href="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml"><img src="https://github.com/axetroy/wasm-hasher/actions/workflows/rust.yml/badge.svg" alt="Build Status" /></a>
@@ -43,6 +43,7 @@ npm install @axetroy/wasm-hasher-sm3
 npm install @axetroy/wasm-hasher-ripemd
 npm install @axetroy/wasm-hasher-tiger
 npm install @axetroy/wasm-hasher-whirlpool
+npm install @axetroy/wasm-hasher-blake
 ```
 
 ### Packages
@@ -58,6 +59,7 @@ npm install @axetroy/wasm-hasher-whirlpool
 | @axetroy/wasm-hasher-ripemd    | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-ripemd)       |
 | @axetroy/wasm-hasher-tiger     | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-tiger)         |
 | @axetroy/wasm-hasher-whirlpool | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-whirlpool.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-whirlpool) |
+| @axetroy/wasm-hasher-blake     | [![npm version](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-blake.svg)](https://badge.fury.io/js/@axetroy%2Fwasm-hasher-blake)         |
 
 ### 🛠️ Build from source
 

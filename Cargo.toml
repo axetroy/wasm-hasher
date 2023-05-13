@@ -42,6 +42,7 @@ wasm-hasher-sm3 = { path = "./crate/sm3", default-features = false }
 wasm-hasher-ripemd = { path = "./crate/ripemd", default-features = false }
 wasm-hasher-tiger = { path = "./crate/tiger", default-features = false }
 wasm-hasher-whirlpool = { path = "./crate/whirlpool", default-features = false }
+wasm-hasher-blake = { path = "./crate/blake", default-features = false }
 
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
@@ -61,4 +62,5 @@ members = [
   "crate/ripemd",
   "crate/tiger",
   "crate/whirlpool",
+  "crate/blake",
 ]
