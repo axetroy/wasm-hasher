@@ -11,6 +11,17 @@ use web_sys::{AbortSignal, Blob};
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+#[cfg(feature = "start")]
+#[wasm_bindgen(start)]
+pub fn start() -> Result<(), JsValue> {
+    std::panic::set_hook(Box::new(console_error_panic_hook::hook));
+
+    #[cfg(feature = "tracing")]
+    tracing_wasm::set_as_global_default();
+
+    Ok(())
+}
+
 #[wasm_bindgen]
 pub async fn ripemd_128(
     signal: AbortSignal,

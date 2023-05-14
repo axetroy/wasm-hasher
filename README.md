@@ -14,7 +14,7 @@
 
 The difference with [github.com/fuyoo/wasm-hasher](https://github.com/fuyoo/wasm-hasher)
 
-1. Hash process can be interrupted with `abortController`
+1. Hash process can be interrupted with `AbortSignal`
 2. The exposed function can specify the chunks size for each read. Larger chunks use more CPU.
 3. `onProgress` callback is optional. Set to `null` to improve performance if you don't need it.
 4. separate packages, smaller wasm files
