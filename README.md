@@ -22,13 +22,21 @@ The difference with [github.com/fuyoo/wasm-hasher](https://github.com/fuyoo/wasm
 ## Usage
 
 ```js
-import("@axetroy/wasm-hasher").then(({ default: hasher }) => {
-  const controller = new abortController();
-  const file = new Blob([], { type: "application/text" });
-  hasher.md5(controller.signal, file, 1024 * 1024 * 10, (progress) => {
+import * as hasher from "@axetroy/wasm-hasher";
+
+const controller = new AbortController();
+const file = new Blob([], { type: "application/text" });
+
+const md5 = await hasher.md5(
+  controller.signal,
+  file,
+  1024 * 1024 * 10,
+  (progress) => {
     console.log("hash progress");
-  });
-});
+  }
+);
+
+console.log(md5);
 ```
 
 ## 🚴 Installation
