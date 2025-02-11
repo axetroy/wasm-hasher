@@ -1,6 +1,6 @@
 [package]
 name = "wasm-hasher-sm3"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Axetroy <axetroy.dev@gmail.com>"]
 edition = "2021"
 repository = "https://github.com/axetroy/wasm-hasher"
