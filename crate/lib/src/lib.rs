@@ -1,5 +1,5 @@
 use digest::Digest;
-use js_sys::{Function, Uint8Array};
+use js_sys::{Error, Function, Uint8Array};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::JsFuture;
 use web_sys::{AbortSignal, Blob};
@@ -23,17 +23,17 @@ pub async fn computed<D: Digest>(
 
   for _ in 0..chunks {
       if signal.aborted() {
-          return Err(JsValue::from("Signal has been abort!"));
+          return Err(Error::new("Signal has been aborted!").into());
       }
 
       let mut end = start + chunk;
       end = if end >= size { size } else { end };
       let data = blob
           .slice_with_f64_and_f64(start, end)
-          .expect("slice blob failed!");
+          .map_err(|e| Error::new(&format!("slice blob failed: {:?}", e)))?;
       let buffer: JsValue = JsFuture::from(data.array_buffer())
           .await
-          .expect("get arrayBuffer failed!");
+          .map_err(|e| Error::new(&format!("get arrayBuffer failed: {:?}", e)))?;
       hasher.update(Uint8Array::new(&buffer).to_vec());
       if let Some(func) = cb {
           let _ = func.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
