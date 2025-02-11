@@ -101,21 +101,15 @@ pub async fn computed<D: Digest>(
         let buffer: JsValue = JsFuture::from(data.array_buffer())
             .await
             .expect("get arrayBuffer failed!");
-        hasher.update(&Uint8Array::new(&buffer).to_vec());
-        match cb {
-            Some(func) => {
-                let _ = func.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
-            }
-            None => (),
+        hasher.update(Uint8Array::new(&buffer).to_vec());
+        if let Some(func) = cb {
+            let _ = func.call1(&JsValue::null(), &JsValue::from(start / size * 100.0));
         }
         start += chunk;
     }
 
-    match cb {
-        Some(func) => {
-            let _ = func.call1(&JsValue::null(), &JsValue::from(100.0));
-        }
-        None => (),
+    if let Some(func) = cb {
+        let _ = func.call1(&JsValue::null(), &JsValue::from(100.0));
     }
 
     Ok(())
