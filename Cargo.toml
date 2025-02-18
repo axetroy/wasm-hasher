@@ -34,6 +34,7 @@ tracing = ["tracing-wasm"]
 opt-level = 3  # 优化级别，最大优化
 debug = false  # 禁用调试信息
 lto = true     # 启用链接时优化
+strip = true   # 去除符号表
 
 [dependencies]
 wee_alloc = { version = "0.4.2", optional = true }
